@@ -6,11 +6,12 @@
 /*   By: jnovoa-a <jnovoa-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 11:45:59 by jnovoa-a          #+#    #+#             */
-/*   Updated: 2025/04/08 13:14:50 by jnovoa-a         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:39:29 by jnovoa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_isalpha(int c)
 {
