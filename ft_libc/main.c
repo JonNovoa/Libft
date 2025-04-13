@@ -19,8 +19,8 @@ int main(void)
     printf("ft_isalnum('#') = %d (esperado: 0)\n", ft_isalnum('#'));
 
     // 4. ft_isascii
-    printf("ft_isascii('z') = %d (esperado: 1)\n", ft_isascii('z'));
-    printf("ft_isascii(128) = %d (esperado: 0)\n", ft_isascii(128));
+    printf("ft_isasci('z') = %d (esperado: 1)\n", ft_isasci('z'));
+    printf("ft_isasci(128) = %d (esperado: 0)\n", ft_isasci(128));
 
     // 5. ft_isprint
     printf("ft_isprint('x') = %d (esperado: 1)\n", ft_isprint('x'));
