@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnovoa-a <jnovoa-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 15:09:37 by jnovoa-a          #+#    #+#             */
-/*   Updated: 2025/04/29 13:36:16 by jnovoa-a         ###   ########.fr       */
+/*   Created: 2025/04/29 13:38:13 by jnovoa-a          #+#    #+#             */
+/*   Updated: 2025/04/29 13:56:28 by jnovoa-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
-	size_t	d_len;
-	size_t	s_len;
+	t_list	*new;
 
-	d_len = ft_strlen(dst);
-	s_len = ft_strlen(src);
-	if (dstsize <= d_len)
-		return (dstsize + s_len);
-	i = 0;
-	while (src[i] && (d_len + i < dstsize - 1))
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
 	{
-		dst[d_len + i] = src[i];
-		i++;
+		return (NULL);
 	}
-	dst[d_len + i] = '\0';
-	return (d_len + s_len);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }
 
 /*
@@ -38,9 +32,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 int	main(void)
 {
-	char buf[20] = "Hello";
-	printf("%zu\n", ft_strlcat(buf, "World", 2));
-	printf("%s\n", buf);
+	t_list	*node;
+	int		x = 42;
+
+	node = ft_lstnew(&x);
+	if (node)
+	{
+		printf("Content: %d\n", *(int *)(node->content));
+		printf("Next: %p\n", (void *)node->next);
+	}
+	else
+		printf("Failed to create node\n");
 	return (0);
 }
 */
